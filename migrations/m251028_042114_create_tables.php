@@ -16,7 +16,8 @@ class m251028_042114_create_tables extends Migration
             'password' => $this->string()->notNull(),
             'salt' => $this->string()->notNull(),
             'email' => $this->string()->notNull(),
-            'profile' => $this->string()->notNull()
+            'profile' => $this->string()->notNull(),
+            'auth_key' => $this->string()->notNull()
         ]);
 
         $this->createTable('tbl_post', [
@@ -56,9 +57,11 @@ class m251028_042114_create_tables extends Migration
      */
     public function safeDown()
     {
-        echo "m251028_042114_create_tables cannot be reverted.\n";
-
-        return false;
+        $this->dropTable('tbl_post');
+        $this->dropTable('tbl_comment');
+        $this->dropTable('tbl_user');
+        $this->dropTable('tbl_tag');
+        $this->dropTable('tbl_lookup');
     }
 
     /*
