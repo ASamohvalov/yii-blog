@@ -16,7 +16,8 @@ $this->title = 'Регистрация';
 
     <div class="text-center h4 mb-4">Регистрация</div>
     <?= $form->field($model, 'username') ?>
-    <?= $form->field($model, 'password') ?>
+    <?= $form->field($model, 'password')->passwordInput() ?>
+    <?= $form->field($model, 'confirmPassword')->passwordInput() ?>
     <?= $form->field($model, 'email') ?>
     <?= Html::submitButton('Отправить', ['class' => 'btn btn-dark mt-2']) ?>
 

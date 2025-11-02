@@ -46,7 +46,9 @@ class AuthController extends Controller
         return $this->render('sign_up', ['model' => $model]);
     }
 
-    public function actionLogout(): void
+    public function actionLogout(): Response
     {
+        Yii::$app->user->logout();
+        return Yii::$app->response->redirect(['site/index']);
     }
 }

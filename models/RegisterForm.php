@@ -10,12 +10,14 @@ class RegisterForm extends Model
 {
     public string $username = '';
     public string $password = '';
+    public string $confirmPassword = '';
     public string $email = '';
 
     public function rules(): array
     {
         return [
             [['username', 'password', 'email'], 'required'],
+            ['password', 'compare', 'compareAttribute' => 'confirmPassword'],
             ['email', 'email']
         ];
     }
