@@ -31,7 +31,7 @@ $this->registerJsFile('@web/js/commentsSwitcher.js');
                 aspernatur fuga ullam alias. Quibusdam maiores quaerat exercitationem sed, ab velit similique ipsa iusto
                 provident debitis excepturi modi, accusantium aspernatur distinctio aliquid vero alias laboriosam porro
                 est?
-            </span>
+                            </span>
 
             <div class="mt-3">
                 <a class="btn btn-primary" id="comments-switcher-btn">Комментарии</a>
