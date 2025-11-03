@@ -17,7 +17,7 @@ $this->title = 'Авторизация';
     <div class="text-center h4 mb-4">Авторизация</div>
 
     <?= $form->field($model, 'username') ?>
-    <?= $form->field($model, 'password') ?>
+    <?= $form->field($model, 'password')->passwordInput() ?>
     <?= Html::submitButton('Войти', ['class' => 'btn btn-dark mt-2']) ?>
 
     <?php ActiveForm::end(); ?>
