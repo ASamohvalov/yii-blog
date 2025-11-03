@@ -1,8 +1,10 @@
 <?php
 
 use app\widgets\CommentsWidget;
+use app\widgets\PostWidget;
 
 /** @var yii\web\View $this */
+/** @var array<app\models\entities\PostEntity> $posts */
 
 $this->title = 'Посты';
 $this->registerJsFile('@web/js/commentsSwitcher.js');
@@ -11,6 +13,10 @@ $this->registerJsFile('@web/js/commentsSwitcher.js');
     <span>Посты</span>
 
     <div class="mt-3">
+        <?php foreach ($posts as $post): ?>
+            <?= PostWidget::widget(['postEntity' => $post]) ?>
+        <?php endforeach; ?>
+
         <div class="border border-secondary p-3 mb-5">
             <div class="text-secondary">Опубликовано - 1 час назад</div>
             <div class="h3">Some title on the post</div>
